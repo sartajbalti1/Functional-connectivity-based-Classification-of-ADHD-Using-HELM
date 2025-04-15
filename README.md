@@ -17,4 +17,6 @@ The codebase can be extended to implement deeper architectures by following the 
 For any questions or assistance regarding the implementation, please contact:
 Email: sartajbalti@gmail.com
 ## Citation
-If you use this code in your research, please cite our paper [S. Ahmed Salman, Z. Lian, M. Saleem and Y. Zhang, "Functional Connectivity Based Classification of ADHD Using Different Atlases," 2020 IEEE International Conference on Progress in Informatics and Computing (PIC), Shanghai, China, 2020, pp. 62-66, doi: 10.1109/PIC50277.2020.9350749].
+If you use this code in your research, please cite our paper <div style="color: blue;">
+ [S. Ahmed Salman, Z. Lian, M. Saleem and Y. Zhang, "Functional Connectivity Based Classification of ADHD Using Different Atlases," 2020 IEEE International Conference on Progress in Informatics and Computing (PIC), Shanghai, China, 2020, pp. 62-66, doi: 10.1109/PIC50277.2020.9350749].
+[Link to Paper]([https://arxiv.org/abs/xxxx.xxxxx](https://ieeexplore.ieee.org/abstract/document/9350749)) </div>
