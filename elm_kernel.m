@@ -1,6 +1,6 @@
 function [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy, TestingAccuracyNC, TestingAccuracyAD] = elm_kernel(TrainingData_File, TestingData_File, Elm_Type, Regularization_coefficient, Kernel_type, Kernel_para)
 
-% Usage: elm(TrainingData_File, TestingData_File, Elm_Type, NumberofHiddenNeurons, ActivationFunction)
+% elm(TrainingData_File, TestingData_File, Elm_Type, NumberofHiddenNeurons, ActivationFunction)
 % OR:    [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy] = elm(TrainingData_File, TestingData_File, Elm_Type, NumberofHiddenNeurons, ActivationFunction)
 %
 % Input:
@@ -41,14 +41,14 @@ CLASSIFIER=1;
 
 %%%%%%%%%%% Load training dataset
 train_data=load(TrainingData_File);
-T=train_data(:,1)';%¶ÁÈ¡ÑµÁ·¼¯±êÇ©1*Ñù±¾Êı
-P=train_data(:,2:size(train_data,2))';%¶ÁÈ¡ÑµÁ·¼¯ÌØÕ÷7616*Ñù±¾Êı
+T=train_data(:,1)';%è¯»å–è®­ç»ƒé›†æ ‡ç­¾1*æ ·æœ¬æ•°
+P=train_data(:,2:size(train_data,2))';%è¯»å–è®­ç»ƒé›†ç‰¹å¾7616*æ ·æœ¬æ•°
 clear train_data;                                   %   Release raw training data array
 
 %%%%%%%%%%% Load testing dataset
 test_data=load(TestingData_File);
-TV.T=test_data(:,1)';%¶ÁÈ¡²âÊÔ¼¯±êÇ©1*Ñù±¾Êı
-TV.P=test_data(:,2:size(test_data,2))';%¶ÁÈ¡²âÊÔ¼¯ÌØÕ÷7616*Ñù±¾Êı
+TV.T=test_data(:,1)';%è¯»å–æµ‹è¯•é›†æ ‡ç­¾1*æ ·æœ¬æ•°
+TV.P=test_data(:,2:size(test_data,2))';%è¯»å–æµ‹è¯•é›†ç‰¹å¾7616*æ ·æœ¬æ•°
 clear test_data;                                    %   Release raw testing data array
 
 C = Regularization_coefficient;
@@ -56,8 +56,8 @@ NumberofTrainingData=size(P,2);
 NumberofTestingData=size(TV.P,2);
 
 if Elm_Type~=REGRESSION
-    %%%%%%%%%%%% Preprocessing the data of classificationÓĞ¼¸Àà
-    sorted_target=sort(cat(2,T,TV.T),2);%ÑµÁ·¼¯±êÇ©´ÓĞ¡µ½´óÅÅÁĞ
+    %%%%%%%%%%%% Preprocessing the data of classificationæœ‰å‡ ç±»
+    sorted_target=sort(cat(2,T,TV.T),2);%è®­ç»ƒé›†æ ‡ç­¾ä»å°åˆ°å¤§æ’åˆ—
     label=zeros(1,1);                               %   Find and save in 'label' class label from training and testing data sets
     label(1,1)=sorted_target(1,1);
     j=1;
@@ -70,7 +70,7 @@ if Elm_Type~=REGRESSION
     number_class=j;
     NumberofOutputNeurons=number_class;
     
-    %%%%%%%%%% Processing the targets of training¹æ·¶Êä³ö
+    %%%%%%%%%% Processing the targets of trainingè§„èŒƒè¾“å‡º
     temp_T=zeros(NumberofOutputNeurons, NumberofTrainingData);
     for i = 1:NumberofTrainingData
         for j = 1:number_class
