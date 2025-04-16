@@ -1,6 +1,6 @@
 function [test_data,train_data] = KFoldCrossValidation(data,fold_size)
 
-    % code which is used to shuffle all the rows of the data set
+    % code which is used to shuffle all the rows of the dataset
     sort_array = randperm(size(data,1));
     for i = 1: size(data,1)
         randomized_data(i,:) = data(sort_array(i),:);
