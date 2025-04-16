@@ -16,7 +16,7 @@ T1 = H1 * beta1;
 
 clear H1;
 
-%% zyd
+
 %%%%%%%%%%% Load training dataset
 P=T1';
 T=train_y';
@@ -42,8 +42,8 @@ clear HH1;clear beta1;
 
 %% zyd
 %%%%%%%%%%% Load testing dataset
-TV.T=test_y';%¶ÁÈ¡²âÊÔ¼¯±êÇ©1*Ñù±¾Êı
-TV.P=TT1';%¶ÁÈ¡²âÊÔ¼¯ÌØÕ÷7616*Ñù±¾Êı
+TV.T=test_y';%è¯»å–æµ‹è¯•é›†æ ‡ç­¾1*æ ·æœ¬æ•°
+TV.P=TT1';%è¯»å–æµ‹è¯•é›†ç‰¹å¾7616*æ ·æœ¬æ•°
 clear test_y;
 
 %%%%%%%%%%% Calculate the output of testing input
