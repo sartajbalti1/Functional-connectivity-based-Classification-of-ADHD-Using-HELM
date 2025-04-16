@@ -10,7 +10,7 @@ for i=1:5
     brains_nc = dir(dirpath_nc );
     for j = 1:normal_num(i)
          brainpath = fullfile( maindir_nc, brains_nc(j).name  );
-         I = load( brainpath );   % 这里进行你的读取操作 358*t
+         I = load( brainpath );   
          O=LocalFeatureExtract13(I);%64*119
          eval(['part',num2str(i),'_normal(:,:,j)=O;']);
          count=count+1;
@@ -26,7 +26,7 @@ for i=1:5
     brains_ad = dir(dirpath_ad );
     for j = 1:abnormal_num(i)
          brainpath = fullfile( maindir_ad, brains_ad(j).name  );
-         I = load( brainpath );   % 这里进行你的读取操作 358*t
+         I = load( brainpath );   % 杩欓噷杩涜浣犵殑璇诲彇鎿嶄綔 358*t
          O=LocalFeatureExtract13(I);%64*119
          eval(['part',num2str(i),'_abnormal(:,:,j)=O;']);
          count=count+1;
@@ -47,8 +47,8 @@ label=[part1_normal_label;part1_abnormal_label;
     part3_normal_label;part3_abnormal_label;
     part4_normal_label;part4_abnormal_label;
     part5_normal_label;part5_abnormal_label];
-experiment=1;%实验次数
-NC_Fold=zeros(5,experiment);%NC每次实验5折的每一折的精度
+experiment=1;%瀹為獙娆℃暟
+NC_Fold=zeros(5,experiment);%NC姣忔瀹為獙5鎶樼殑姣忎竴鎶樼殑绮惧害
 ADHD_Fold=zeros(5,experiment);%
 %%
 for e=1:experiment
@@ -59,9 +59,9 @@ for e=1:experiment
         train_x=data(train_set_index,:);
         train_y=label(train_set_index,:);
         test_y=label(test_set_index,:);
-        [train_x,PS]=mapminmax(train_x');%向量归一化到[-1,1]
+        [train_x,PS]=mapminmax(train_x');%鍚戦噺褰掍竴鍖栧埌[-1,1]
         test_x=mapminmax('apply',test_x',PS);
-        trainData=[train_y train_x']; %合并label和attributes 155*7617
+        trainData=[train_y train_x']; %鍚堝苟label鍜宎ttributes 155*7617
         testData=[test_y test_x'];
         save train.txt -ascii trainData;
         save test.txt -ascii testData;
