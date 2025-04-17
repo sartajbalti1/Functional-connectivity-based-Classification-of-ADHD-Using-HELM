@@ -1,7 +1,7 @@
 # ADHD Classification Using Hierarchical Extreme Learning Machine
 
 ## Overview
-This repository contains the implementation code for our research paper: "Functional Connectivity-based Classification of ADHD Using Hierarchical Extreme Learning Machine (HELM)."
+This repository contains the implementation code for our research paper: "Functional Connectivity-based Classification of ADHD Using Hierarchical Extreme Learning Machine (HELM)"
 
 ## Dataset
 The `flod5data` directory contains our preprocessed dataset divided into 5 folds for cross-validation experiments, and the data is already preprocessed.
