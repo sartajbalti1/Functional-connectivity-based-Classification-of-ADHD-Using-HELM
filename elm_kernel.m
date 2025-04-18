@@ -29,11 +29,7 @@ function [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy, TestingA
 % Sample1 regression: [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy] = elm_kernel('sinc_train', 'sinc_test', 0, 1, ''RBF_kernel',100)
 % Sample2 classification: elm_kernel('diabetes_train', 'diabetes_test', 1, 1, 'RBF_kernel',100)
 %
-    %%%%    Authors:    MR HONG-MING ZHOU AND DR GUANG-BIN HUANG
-    %%%%    NANYANG TECHNOLOGICAL UNIVERSITY, SINGAPORE
-    %%%%    EMAIL:      EGBHUANG@NTU.EDU.SG; GBHUANG@IEEE.ORG
-    %%%%    WEBSITE:    http://www.ntu.edu.sg/eee/icis/cv/egbhuang.htm
-    %%%%    DATE:       MARCH 2012
+
 
 %%%%%%%%%%% Macro definition
 REGRESSION=0;
