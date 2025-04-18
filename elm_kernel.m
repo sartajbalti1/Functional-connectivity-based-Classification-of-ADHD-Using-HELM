@@ -37,14 +37,14 @@ CLASSIFIER=1;
 
 %%%%%%%%%%% Load training dataset
 train_data=load(TrainingData_File);
-T=train_data(:,1)';%读取训练集标签1*样本数
-P=train_data(:,2:size(train_data,2))';%读取训练集特征7616*样本数
+T=train_data(:,1)';
+P=train_data(:,2:size(train_data,2))';
 clear train_data;                                   %   Release raw training data array
 
 %%%%%%%%%%% Load testing dataset
 test_data=load(TestingData_File);
-TV.T=test_data(:,1)';%读取测试集标签1*样本数
-TV.P=test_data(:,2:size(test_data,2))';%读取测试集特征7616*样本数
+TV.T=test_data(:,1)';
+TV.P=test_data(:,2:size(test_data,2))';
 clear test_data;                                    %   Release raw testing data array
 
 C = Regularization_coefficient;
