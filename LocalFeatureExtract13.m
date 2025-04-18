@@ -1,9 +1,7 @@
   function [ output] =LocalFeatureExtract13( input )
-%´óÄÔÊı¾İµÄ¾Ö²¿ÌØÕ÷ÌáÈ¡
-%input=rand(358,230);
-% µÃµ½input¾ØÕó´óĞ¡
+
 [m,n]=size(input);   %m=358
-%%%358*T==>357*2*T,¶ş½øÖÆ±àÂë
+%%%358*T==>357*2*T,
 a=zeros(2*(m-1),n);
 for i=2:m
     for j=1:n
@@ -19,13 +17,13 @@ for i=2:m-1
         end
     end
 end
-%%%±ßÔµ´¦Àí
+
 for j=1:n
         if input(m,j)<=input(1,j)
             a(2*(m-1),j)=1;
         end
 end
-%%%357*2*T==>119*T£¬6Î»¶ş½øÖÆ×ª»¯ÎªÊ®½øÖÆ
+%%%357*2*T==>119*Tï¼Œ6ä½äºŒè¿›åˆ¶è½¬åŒ–ä¸ºåè¿›åˆ¶
 len=floor((2*(m-1)-1)/6)+1;  %len=119
 b=zeros(len,n);
 for j=1:n
