@@ -3,7 +3,7 @@ tic
 train_x = zscore(train_x')';
 H1 = [train_x .1 * ones(size(train_x,1),1)];
 clear train_x;
-%% First layer RELM
+
 A1 = H1 * b1;A1 = mapminmax(A1);
 clear b1;
 beta1  =  sparse_elm_autoencoder(A1,H1,1e-3,50)';
@@ -42,8 +42,8 @@ clear HH1;clear beta1;
 
 %% zyd
 %%%%%%%%%%% Load testing dataset
-TV.T=test_y';%读取测试集标签1*样本数
-TV.P=TT1';%读取测试集特征7616*样本数
+TV.T=test_y';
+TV.P=TT1';
 clear test_y;
 
 %%%%%%%%%%% Calculate the output of testing input
