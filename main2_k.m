@@ -26,7 +26,7 @@ for i=1:5
     brains_ad = dir(dirpath_ad );
     for j = 1:abnormal_num(i)
          brainpath = fullfile( maindir_ad, brains_ad(j).name  );
-         I = load( brainpath );   % 这里进行你的读取操作 358*t
+         I = load( brainpath );   %  358*t
          O=LocalFeatureExtract13(I);%64*119
          eval(['part',num2str(i),'_abnormal(:,:,j)=O;']);
          count=count+1;
@@ -47,8 +47,8 @@ label=[part1_normal_label;part1_abnormal_label;
     part3_normal_label;part3_abnormal_label;
     part4_normal_label;part4_abnormal_label;
     part5_normal_label;part5_abnormal_label];
-experiment=1;%实验次数
-NC_Fold=zeros(5,experiment);%NC每次实验5折的每一折的精度
+experiment=1;
+NC_Fold=zeros(5,experiment);
 ADHD_Fold=zeros(5,experiment);%
 %%
 for e=1:experiment
