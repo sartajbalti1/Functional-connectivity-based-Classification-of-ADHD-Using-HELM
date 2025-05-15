@@ -52,8 +52,8 @@ NumberofTrainingData=size(P,2);
 NumberofTestingData=size(TV.P,2);
 
 if Elm_Type~=REGRESSION
-    %%%%%%%%%%%% Preprocessing the data of classification有几类
-    sorted_target=sort(cat(2,T,TV.T),2);%训练集标签从小到大排列
+    %%%%%%%%%%%% Preprocessing the data of classification
+    sorted_target=sort(cat(2,T,TV.T),2);
     label=zeros(1,1);                               %   Find and save in 'label' class label from training and testing data sets
     label(1,1)=sorted_target(1,1);
     j=1;
@@ -66,7 +66,7 @@ if Elm_Type~=REGRESSION
     number_class=j;
     NumberofOutputNeurons=number_class;
     
-    %%%%%%%%%% Processing the targets of training规范输出
+    %%%%%%%%%% Processing the targets of training
     temp_T=zeros(NumberofOutputNeurons, NumberofTrainingData);
     for i = 1:NumberofTrainingData
         for j = 1:number_class
