@@ -28,11 +28,7 @@ function [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy, TestingA
 % Sample1 regression: [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy] = elm_kernel('sinc_train', 'sinc_test', 0, 1, ''RBF_kernel',100)
 % Sample2 classification: elm_kernel('diabetes_train', 'diabetes_test', 1, 1, 'RBF_kernel',100)
 %
-    %%%%    Authors:    MR HONG-MING ZHOU AND DR GUANG-BIN HUANG
-    %%%%    NANYANG TECHNOLOGICAL UNIVERSITY, SINGAPORE
-    %%%%    EMAIL:      EGBHUANG@NTU.EDU.SG; GBHUANG@IEEE.ORG
-    %%%%    WEBSITE:    http://www.ntu.edu.sg/eee/icis/cv/egbhuang.htm
-    %%%%    DATE:       MARCH 2012
+
 
 %%%%%%%%%%% Macro definition
 REGRESSION=0;
@@ -40,14 +36,14 @@ CLASSIFIER=1;
 
 %%%%%%%%%%% Load training dataset
 train_data=load(TrainingData_File);
-T=train_data(:,1)';%读取训练集标签1*样本数
-P=train_data(:,2:size(train_data,2))';%读取训练集特征7616*样本数
+T=train_data(:,1)';
+P=train_data(:,2:size(train_data,2))';
 clear train_data;                                   %   Release raw training data array
 
 %%%%%%%%%%% Load testing dataset
 test_data=load(TestingData_File);
-TV.T=test_data(:,1)';%读取测试集标签1*样本数
-TV.P=test_data(:,2:size(test_data,2))';%读取测试集特征7616*样本数
+TV.T=test_data(:,1)';
+TV.P=test_data(:,2:size(test_data,2))';
 clear test_data;                                    %   Release raw testing data array
 
 C = Regularization_coefficient;
@@ -55,8 +51,8 @@ NumberofTrainingData=size(P,2);
 NumberofTestingData=size(TV.P,2);
 
 if Elm_Type~=REGRESSION
-    %%%%%%%%%%%% Preprocessing the data of classification有几类
-    sorted_target=sort(cat(2,T,TV.T),2);%训练集标签从小到大排列
+    %%%%%%%%%%%% Preprocessing the data of classification
+    sorted_target=sort(cat(2,T,TV.T),2);%
     label=zeros(1,1);                               %   Find and save in 'label' class label from training and testing data sets
     label(1,1)=sorted_target(1,1);
     j=1;
@@ -69,7 +65,7 @@ if Elm_Type~=REGRESSION
     number_class=j;
     NumberofOutputNeurons=number_class;
     
-    %%%%%%%%%% Processing the targets of training规范输出
+    %%%%%%%%%% Processing the targets of training
     temp_T=zeros(NumberofOutputNeurons, NumberofTrainingData);
     for i = 1:NumberofTrainingData
         for j = 1:number_class
