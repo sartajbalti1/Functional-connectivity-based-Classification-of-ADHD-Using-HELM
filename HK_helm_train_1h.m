@@ -24,7 +24,7 @@ clear train_y;
 
 C = Regularization_coefficient;
 
-%%%%%%%%%%% Training Phase %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Training Phase %%%%%%%%%%%%%%%
 n = size(T,2);
 Omega_train = kernel_matrix(P',Kernel_type, Kernel_para);
 OutputWeight=((Omega_train+speye(n)/C)\(T'));
@@ -80,7 +80,7 @@ TestingAccuracyAD=ADHDR/(size(TV.T,2)-NC)
 
 
 %%
-%%%%%%%%%%%%%%%%%% Kernel Matrix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% Kernel Matrix %%%%%%%%%%%%%%%%%%%%%%
     
 function omega = kernel_matrix(Xtrain,kernel_type, kernel_pars,Xt)
 
